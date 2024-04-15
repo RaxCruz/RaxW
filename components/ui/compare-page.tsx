@@ -125,7 +125,8 @@ export function TabsDemo() {
               <div>
                 <CardTitle>After</CardTitle>
                 <CardDescription>
-                  Change your password here. After saving, you'll be logged out.
+                  Change your password here. After saving, you will be logged
+                  out.
                 </CardDescription>
               </div>
             </div>
