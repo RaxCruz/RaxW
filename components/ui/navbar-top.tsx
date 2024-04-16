@@ -20,41 +20,29 @@ export default function NavBarTop() {
     <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 z-50 col-span-12">
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <Link
-          href="#"
+          href="#hero_section"
           className="flex items-center gap-2 text-lg font-semibold md:text-base"
         >
           <BeakerIcon className="h-6 w-6" />
           <span className="sr-only">Acme Inc</span>
         </Link>
         <Link
-          href="#"
-          className="text-muted-foreground transition-colors hover:text-foreground"
+          href="#intro_section"
+          className="text-nowrap text-muted-foreground transition-colors hover:text-foreground"
         >
-          Dashboard
+          介紹
         </Link>
         <Link
-          href="#"
-          className="text-muted-foreground transition-colors hover:text-foreground"
+          href="#flow_section"
+          className="text-nowrap text-muted-foreground transition-colors hover:text-foreground"
         >
-          Orders
+          合作
         </Link>
         <Link
-          href="#"
+          href="#q_a_section"
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
-          Products
-        </Link>
-        <Link
-          href="#"
-          className="text-muted-foreground transition-colors hover:text-foreground"
-        >
-          Customers
-        </Link>
-        <Link
-          href="#"
-          className="text-foreground transition-colors hover:text-foreground"
-        >
-          Settings
+          Q&A
         </Link>
       </nav>
       <Sheet>
@@ -74,31 +62,28 @@ export default function NavBarTop() {
               <span className="sr-only">Acme Inc</span>
             </Link>
             <Link
-              href="#"
+              href="#hero_section"
               className="text-muted-foreground hover:text-foreground"
             >
-              Dashboard
+              首頁
             </Link>
             <Link
-              href="#"
+              href="#intro_section"
               className="text-muted-foreground hover:text-foreground"
             >
-              Orders
+              介紹
             </Link>
             <Link
-              href="#"
+              href="#flow_section"
               className="text-muted-foreground hover:text-foreground"
             >
-              Products
+              合作
             </Link>
             <Link
-              href="#"
+              href="#q_a_section"
               className="text-muted-foreground hover:text-foreground"
             >
-              Customers
-            </Link>
-            <Link href="#" className="hover:text-foreground">
-              Settings
+              QA
             </Link>
           </nav>
         </SheetContent>
@@ -123,12 +108,10 @@ export default function NavBarTop() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuLabel>RaxCruz</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuItem>Support</DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Logout</DropdownMenuItem>
+            <DropdownMenuItem>全端工程師</DropdownMenuItem>
+            <DropdownMenuItem>UI/UX 設計師</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

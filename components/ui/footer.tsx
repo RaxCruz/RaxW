@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 export default function Footer() {
   return (
     // NOTE: An overflow of hidden will be required on a wrapping
@@ -42,10 +43,10 @@ const ExampleContent = () => {
   return (
     <div className="relative grid place-content-center space-y-6 bg-neutral-950 p-8">
       <p className="text-center text-6xl font-black text-neutral-50">
-        Fuzzy Overlay Example
+        Rax Designs Websites
       </p>
       <p className="text-center text-neutral-400">
-        This is a basic example of using a lo-fi fuzzy overlay 📺
+        室內設計般，量身訂做，打造你的專屬網站 📺
       </p>
 
       <Image
@@ -56,12 +57,16 @@ const ExampleContent = () => {
         className="mx-auto"
       />
       <div className="flex items-center justify-center gap-3">
-        <button className="text-neutral-20 w-fit px-4 py-2 font-semibold text-neutral-200 transition-colors hover:bg-neutral-800">
-          Pricing
-        </button>
-        <button className="w-fit bg-neutral-200 px-4 py-2 font-semibold text-neutral-700 transition-colors hover:bg-neutral-50">
-          Try it free
-        </button>
+        <Link href="#flow_section">
+          <button className="text-neutral-20 w-fit px-4 py-2 font-semibold text-neutral-200 transition-colors hover:bg-neutral-800">
+            Pricing
+          </button>
+        </Link>
+        <Link href="https://www.instagram.com/peter030910/" target="_blank">
+          <button className="w-fit bg-neutral-200 px-4 py-2 font-semibold text-neutral-700 transition-colors hover:bg-neutral-50">
+            社群逛逛
+          </button>
+        </Link>
       </div>
     </div>
   );

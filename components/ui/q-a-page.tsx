@@ -7,7 +7,10 @@ import {
 import Image from "next/image";
 export default function QAPage() {
   return (
-    <section className="container grid grid-cols-1  py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 gap-6">
+    <section
+      className="container grid grid-cols-1  py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 gap-6"
+      id="q_a_section"
+    >
       <div className="mx-auto flex gap-8 items-center mt-6">
         <Image
           src="/hat-avatar-small.png"

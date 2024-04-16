@@ -55,8 +55,8 @@ export function CarouselDemo() {
           </div>
         </CarouselItem>
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="hidden" />
+      <CarouselNext className="hidden" />
     </Carousel>
   );
 }

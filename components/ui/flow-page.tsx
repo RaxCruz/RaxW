@@ -29,7 +29,7 @@ export default function FlowPage() {
         </blockquote>
       </div>
       <CustomKanban />
-      <div className="mt-20">
+      <div className="mt-20" id="flow_section">
         <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 flex items-center gap-2">
           合作方式
           <Badge className="text-center">RaxW</Badge>

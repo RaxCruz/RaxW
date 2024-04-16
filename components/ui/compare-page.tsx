@@ -2,7 +2,10 @@ import { CarouselDemo } from "./caroulsel-demo";
 
 export default function ComparePage() {
   return (
-    <section className="container grid grid-cols-1  py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 gap-8">
+    <section
+      className="container grid grid-cols-1  py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 gap-8"
+      id="intro_section"
+    >
       <div className="text-center">
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
           骨骼式排版: 強化使用者體驗
@@ -116,14 +119,11 @@ export function TabsDemo() {
           <CardHeader>
             <div className="flex gap-4">
               <Avatar>
-                <AvatarImage
-                  src="https://github.com/shadcn.png"
-                  alt="@shadcn"
-                />
+                <AvatarImage src="/rax-peep.svg" alt="rax" />
                 <AvatarFallback>R</AvatarFallback>
               </Avatar>
               <div>
-                <CardTitle>After</CardTitle>
+                <CardTitle>Rax</CardTitle>
                 <CardDescription>
                   Change your password here. After saving, you will be logged
                   out.

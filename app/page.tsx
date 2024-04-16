@@ -19,10 +19,11 @@ import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import CustomKanban from "@/components/ui/todo-list";
 import VerticalAccordion from "@/components/ui/vertical-accodion";
 import Image from "next/image";
+import Script from "next/script";
 
 export default function Home() {
   return (
-    <main className=" min-h-screen w-full relative">
+    <main className=" min-h-screen  relative max-w-full ">
       <NavBarTop />
       <HeroPage />
       <FuzzyOverlayHero />

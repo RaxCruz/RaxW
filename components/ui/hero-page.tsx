@@ -1,3 +1,4 @@
+import { Instagram } from "lucide-react";
 import { Button } from "./button";
 import {
   Card,
@@ -7,16 +8,19 @@ import {
   CardTitle,
 } from "./card";
 import FloatingPhone from "./floating-phone";
+import Script from "next/script";
+import Link from "next/link";
 
 export default function HeroPage() {
   return (
-    <section className="relative">
+    <section className="relative" id="hero_section">
       <div className="hidden lg:block absolute -left-60 -top-80 h-full w-96  bg-whitegridpaper2 rotate-45 bg-blend-lighten"></div>
       <div className="hidden lg:block absolute -left-80 -bottom-80 h-full w-96  bg-whitegridpaper2 -rotate-45 bg-blend-lighten"></div>
       <div className="container relative mx-auto flex flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 col-span-8">
         <a
           className="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
-          href="/docs/changelog"
+          href="https://rax-web2-0.vercel.app/"
+          target="_blank"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +42,7 @@ export default function HeroPage() {
             role="none"
             className="shrink-0 bg-border w-[1px] mx-2 h-4"
           ></div>{" "}
-          <span>Introducing Lift Mode</span>
+          <span>教學課程</span>
           <svg
             width="15"
             height="15"
@@ -61,7 +65,7 @@ export default function HeroPage() {
         <div className="flex gap-2">
           <h2>Rax Designs Your Web</h2>
 
-          <blockquote className=" border-l-2 pl-2 italic">
+          <blockquote className=" border-l-2 pl-2 italic ">
             <h2>更貼近年輕人的設計</h2>
           </blockquote>
         </div>
@@ -86,7 +90,18 @@ function Sooner() {
         </CardDescription>
       </CardHeader>
       <CardFooter>
-        <Button>Create New Order</Button>
+        <Script
+          src="https://static.elfsight.com/platform/platform.js"
+          data-use-service-core
+          defer
+        />
+        <div
+          className="elfsight-app-6e2f1f14-1507-44cc-846e-894e912f1b6c m-0 right-7"
+          data-elfsight-app-lazy
+        ></div>
+        <Link href="#flow_section">
+          <Button>合作方式</Button>
+        </Link>
       </CardFooter>
     </Card>
   );
