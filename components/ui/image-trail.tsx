@@ -1,6 +1,7 @@
 "use client";
 
 import { useAnimate } from "framer-motion";
+import Image from "next/image";
 import React, { useRef } from "react";
 import { FiMousePointer } from "react-icons/fi";
 
@@ -47,13 +48,20 @@ const MouseImageTrail = ({
   // images will be rotated at a random number between zero and rotationRange,
   // alternating between a positive and negative rotation
   rotationRange,
+}: {
+  children: any;
+  images: any;
+
+  renderImageBuffer: any;
+
+  rotationRange: any;
 }) => {
   const [scope, animate] = useAnimate();
 
   const lastRenderPosition = useRef({ x: 0, y: 0 });
   const imageRenderCount = useRef(0);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: any) => {
     const { clientX, clientY } = e;
 
     const distance = calculateDistance(
@@ -71,7 +79,7 @@ const MouseImageTrail = ({
     }
   };
 
-  const calculateDistance = (x1, y1, x2, y2) => {
+  const calculateDistance = (x1: any, y1: any, x2: any, y2: any) => {
     const deltaX = x2 - x1;
     const deltaY = y2 - y1;
 
@@ -85,11 +93,11 @@ const MouseImageTrail = ({
     const imageIndex = imageRenderCount.current % images.length;
     const selector = `[data-mouse-move-index="${imageIndex}"]`;
 
-    const el = document.querySelector(selector);
+    const el = document.querySelector(selector) as HTMLElement | null;
 
-    el.style.top = `${lastRenderPosition.current.y}px`;
-    el.style.left = `${lastRenderPosition.current.x}px`;
-    el.style.zIndex = imageRenderCount.current.toString();
+    el!.style.top = `${lastRenderPosition.current.y}px`;
+    el!.style.left = `${lastRenderPosition.current.x}px`;
+    el!.style.zIndex = imageRenderCount.current.toString();
 
     const rotation = Math.random() * rotationRange;
 
@@ -132,8 +140,8 @@ const MouseImageTrail = ({
     >
       {children}
 
-      {images.map((img, index) => (
-        <img
+      {images.map((img: any, index: any) => (
+        <Image
           className="pointer-events-none absolute left-0 top-0 h-48 w-auto rounded-xl border-2 border-black bg-neutral-900 object-cover opacity-0"
           src={img}
           alt={`Mouse move image ${index}`}

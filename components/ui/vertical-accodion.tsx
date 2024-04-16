@@ -44,7 +44,23 @@ export default function VerticalAccordion() {
   );
 }
 
-const Panel = ({ open, setOpen, id, Icon, title, imgSrc, description }) => {
+const Panel = ({
+  open,
+  setOpen,
+  id,
+  Icon,
+  title,
+  imgSrc,
+  description,
+}: {
+  open: any;
+  setOpen: any;
+  id: any;
+  Icon: any;
+  title: any;
+  imgSrc: any;
+  description: any;
+}) => {
   const { width } = useWindowSize();
   const isOpen = open === id;
 

@@ -51,18 +51,30 @@ const Board = () => {
   );
 };
 
-const Column = ({ title, headingColor, cards, column, setCards }) => {
+const Column = ({
+  title,
+  headingColor,
+  cards,
+  column,
+  setCards,
+}: {
+  title: any;
+  headingColor: any;
+  cards: any;
+  column: any;
+  setCards: any;
+}) => {
   const [active, setActive] = useState(false);
 
-  const handleDragStart = (e, card) => {
+  const handleDragStart = (e: any, card: any) => {
     e.dataTransfer.setData("cardId", card.id);
   };
 
-  const handleDragEnd = (e) => {
+  const handleDragEnd = (e: any) => {
     const cardId = e.dataTransfer.getData("cardId");
 
     setActive(false);
-    clearHighlights();
+    clearHighlights(null);
 
     const indicators = getIndicators();
     const { element } = getNearestIndicator(e, indicators);
@@ -93,22 +105,22 @@ const Column = ({ title, headingColor, cards, column, setCards }) => {
     }
   };
 
-  const handleDragOver = (e) => {
+  const handleDragOver = (e: any) => {
     e.preventDefault();
     highlightIndicator(e);
 
     setActive(true);
   };
 
-  const clearHighlights = (els) => {
+  const clearHighlights = (els: any | null) => {
     const indicators = els || getIndicators();
 
-    indicators.forEach((i) => {
+    indicators.forEach((i: any) => {
       i.style.opacity = "0";
     });
   };
 
-  const highlightIndicator = (e) => {
+  const highlightIndicator = (e: any) => {
     const indicators = getIndicators();
 
     clearHighlights(indicators);
@@ -118,11 +130,11 @@ const Column = ({ title, headingColor, cards, column, setCards }) => {
     el.element.style.opacity = "1";
   };
 
-  const getNearestIndicator = (e, indicators) => {
+  const getNearestIndicator = (e: any, indicators: any) => {
     const DISTANCE_OFFSET = 50;
 
     const el = indicators.reduce(
-      (closest, child) => {
+      (closest: any, child: any) => {
         const box = child.getBoundingClientRect();
 
         const offset = e.clientY - (box.top + DISTANCE_OFFSET);
@@ -147,11 +159,11 @@ const Column = ({ title, headingColor, cards, column, setCards }) => {
   };
 
   const handleDragLeave = () => {
-    clearHighlights();
+    clearHighlights(null);
     setActive(false);
   };
 
-  const filteredCards = cards.filter((c) => c.column === column);
+  const filteredCards = cards.filter((c: any) => c.column === column);
 
   return (
     <div className="w-56 shrink-0">
@@ -169,7 +181,7 @@ const Column = ({ title, headingColor, cards, column, setCards }) => {
           active ? "bg-neutral-800/50" : "bg-neutral-800/0"
         }`}
       >
-        {filteredCards.map((c) => {
+        {filteredCards.map((c: any) => {
           return <Card key={c.id} {...c} handleDragStart={handleDragStart} />;
         })}
         <DropIndicator beforeId={null} column={column} />
@@ -179,7 +191,17 @@ const Column = ({ title, headingColor, cards, column, setCards }) => {
   );
 };
 
-const Card = ({ title, id, column, handleDragStart }) => {
+const Card = ({
+  title,
+  id,
+  column,
+  handleDragStart,
+}: {
+  title: any;
+  id: any;
+  column: any;
+  handleDragStart: any;
+}) => {
   return (
     <>
       <DropIndicator beforeId={id} column={column} />
@@ -196,7 +218,13 @@ const Card = ({ title, id, column, handleDragStart }) => {
   );
 };
 
-const DropIndicator = ({ beforeId, column }) => {
+const DropIndicator = ({
+  beforeId,
+  column,
+}: {
+  beforeId: any;
+  column: any;
+}) => {
   return (
     <div
       data-before={beforeId || "-1"}
@@ -206,10 +234,10 @@ const DropIndicator = ({ beforeId, column }) => {
   );
 };
 
-const BurnBarrel = ({ setCards }) => {
+const BurnBarrel = ({ setCards }: { setCards: any }) => {
   const [active, setActive] = useState(false);
 
-  const handleDragOver = (e) => {
+  const handleDragOver = (e: any) => {
     e.preventDefault();
     setActive(true);
   };
@@ -218,10 +246,10 @@ const BurnBarrel = ({ setCards }) => {
     setActive(false);
   };
 
-  const handleDragEnd = (e) => {
+  const handleDragEnd = (e: any) => {
     const cardId = e.dataTransfer.getData("cardId");
 
-    setCards((pv) => pv.filter((c) => c.id !== cardId));
+    setCards((pv: any) => pv.filter((c: any) => c.id !== cardId));
 
     setActive(false);
   };
@@ -242,11 +270,11 @@ const BurnBarrel = ({ setCards }) => {
   );
 };
 
-const AddCard = ({ column, setCards }) => {
+const AddCard = ({ column, setCards }: { column: any; setCards: any }) => {
   const [text, setText] = useState("");
   const [adding, setAdding] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
 
     if (!text.trim().length) return;
@@ -257,7 +285,7 @@ const AddCard = ({ column, setCards }) => {
       id: Math.random().toString(),
     };
 
-    setCards((pv) => [...pv, newCard]);
+    setCards((pv: any) => [...pv, newCard]);
 
     setAdding(false);
   };

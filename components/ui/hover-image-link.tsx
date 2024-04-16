@@ -42,8 +42,18 @@ export default function HoverImageLinks() {
   );
 }
 
-const Link = ({ heading, imgSrc, subheading, href }) => {
-  const ref = useRef(null);
+const Link = ({
+  heading,
+  imgSrc,
+  subheading,
+  href,
+}: {
+  heading: any;
+  imgSrc: any;
+  subheading: any;
+  href: any;
+}) => {
+  const ref = useRef<HTMLAnchorElement>(null);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -54,8 +64,8 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
   const top = useTransform(mouseYSpring, [0.5, -0.5], ["40%", "60%"]);
   const left = useTransform(mouseXSpring, [0.5, -0.5], ["60%", "70%"]);
 
-  const handleMouseMove = (e) => {
-    const rect = ref.current.getBoundingClientRect();
+  const handleMouseMove = (e: any) => {
+    const rect = ref.current!.getBoundingClientRect();
 
     const width = rect.width;
     const height = rect.height;
@@ -92,7 +102,7 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
           }}
           className="relative z-10 block text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
         >
-          {heading.split("").map((l, i) => (
+          {heading.split("").map((l: any, i: any) => (
             <motion.span
               variants={{
                 initial: { x: 0 },
