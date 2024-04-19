@@ -41,9 +41,9 @@ export default function Home() {
       <Reveal>
         <BeforeAfterPage />
       </Reveal>
-      <Reveal>
-        <FlowPage />
-      </Reveal>
+
+      <FlowPage />
+
       <Reveal>
         <QAPage />
       </Reveal>

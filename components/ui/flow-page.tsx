@@ -8,27 +8,29 @@ import Reveal from "./reveal";
 export default function FlowPage() {
   return (
     <section className="container grid grid-cols-1  py-8 md:py-12 md:pb-8 lg:py-20 lg:pb-20 gap-8">
-      <div className="">
-        <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 flex items-center gap-2">
-          專屬行程
-          <Badge className="text-center">特色</Badge>
-        </h2>
+      <Reveal>
+        <div className="">
+          <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 flex items-center gap-2">
+            專屬行程
+            <Badge className="text-center">特色</Badge>
+          </h2>
 
-        <p className="leading-7 [&:not(:first-child)]:mt-6">
-          每個
-          <a
-            href="https://www.managertoday.com.tw/articles/view/53570?"
-            className="font-medium text-primary underline underline-offset-4"
-            target="_blank"
-          >
-            專案
-          </a>
-          建立獨一流程控制,更能了解專案進度
-        </p>
-        <blockquote className="mt-6 border-l-2 pl-6 italic">
-          「讓客戶與你知道下一步該做什麼」— Rax
-        </blockquote>
-      </div>
+          <p className="leading-7 [&:not(:first-child)]:mt-6">
+            每個
+            <a
+              href="https://www.managertoday.com.tw/articles/view/53570?"
+              className="font-medium text-primary underline underline-offset-4"
+              target="_blank"
+            >
+              專案
+            </a>
+            建立獨一流程控制,更能了解專案進度
+          </p>
+          <blockquote className="mt-6 border-l-2 pl-6 italic">
+            「讓客戶與你知道下一步該做什麼」— Rax
+          </blockquote>
+        </div>
+      </Reveal>
       <CustomKanban />
       <Reveal>
         <div className="mt-20" id="flow_section">
@@ -44,8 +46,13 @@ export default function FlowPage() {
           </blockquote>
         </div>
       </Reveal>
-      <NewsPage />
-      <VerticalAccordion />
+      <Reveal>
+        {" "}
+        <NewsPage />
+      </Reveal>
+      <Reveal>
+        <VerticalAccordion />
+      </Reveal>
     </section>
   );
 }
