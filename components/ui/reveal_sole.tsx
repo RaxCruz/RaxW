@@ -27,7 +27,7 @@ export default function RevealSole({
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.5, delay: 0.35 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
       >
         {children}
       </motion.div>
