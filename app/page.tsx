@@ -13,6 +13,8 @@ import IntroPage from "@/components/ui/intro-page";
 import NavBarTop from "@/components/ui/navbar-top";
 import NewsPage from "@/components/ui/news-page";
 import QAPage from "@/components/ui/q-a-page";
+import Reveal from "@/components/ui/reveal";
+import RevealSole from "@/components/ui/reveal_sole";
 import { Separator } from "@/components/ui/separator";
 import StickyScrollRevealPage from "@/components/ui/sticky-scoll-section";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
@@ -24,14 +26,30 @@ import Script from "next/script";
 export default function Home() {
   return (
     <main className=" min-h-screen  relative max-w-full ">
-      <NavBarTop />
-      <HeroPage />
+      <Reveal>
+        <NavBarTop />
+      </Reveal>
+      <Reveal>
+        <HeroPage />
+      </Reveal>
+
       <FuzzyOverlayHero />
-      <ComparePage />
-      <BeforeAfterPage />
-      <FlowPage />
-      <QAPage />
-      <Footer />
+
+      <Reveal>
+        <ComparePage />
+      </Reveal>
+      <Reveal>
+        <BeforeAfterPage />
+      </Reveal>
+      <Reveal>
+        <FlowPage />
+      </Reveal>
+      <Reveal>
+        <QAPage />
+      </Reveal>
+      <Reveal>
+        <Footer />
+      </Reveal>
     </main>
   );
 }

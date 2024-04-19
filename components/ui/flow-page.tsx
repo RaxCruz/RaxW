@@ -4,6 +4,7 @@ import VerticalAccordion from "./vertical-accodion";
 import NewsPage from "./news-page";
 import { Badge } from "./badge";
 import Image from "next/image";
+import Reveal from "./reveal";
 export default function FlowPage() {
   return (
     <section className="container grid grid-cols-1  py-8 md:py-12 md:pb-8 lg:py-20 lg:pb-20 gap-8">
@@ -29,18 +30,20 @@ export default function FlowPage() {
         </blockquote>
       </div>
       <CustomKanban />
-      <div className="mt-20" id="flow_section">
-        <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 flex items-center gap-2">
-          合作方式
-          <Badge className="text-center">RaxW</Badge>
-        </h2>
-        <p className="leading-7 [&:not(:first-child)]:mt-6">
-          確認合作到交付使用,過程透明且流程清晰
-        </p>
-        <blockquote className="mt-6 border-l-2 pl-6 italic">
-          「專案的成功，建立在彼此的信賴」— Rax
-        </blockquote>
-      </div>
+      <Reveal>
+        <div className="mt-20" id="flow_section">
+          <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 flex items-center gap-2">
+            合作方式
+            <Badge className="text-center">RaxW</Badge>
+          </h2>
+          <p className="leading-7 [&:not(:first-child)]:mt-6">
+            確認合作到交付使用,過程透明且流程清晰
+          </p>
+          <blockquote className="mt-6 border-l-2 pl-6 italic">
+            「專案的成功，建立在彼此的信賴」— Rax
+          </blockquote>
+        </div>
+      </Reveal>
       <NewsPage />
       <VerticalAccordion />
     </section>
